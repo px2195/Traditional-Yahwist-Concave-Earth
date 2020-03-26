@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>861</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Transformacja niebocentryczna</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>240</y>
+      <width>291</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Otwiera przy użyciu szybkiego ale funkcjonalnego sxiv.</string>
+    </property>
+    <property name="text">
+     <string>Otwórz w sxiv</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>200</y>
+      <width>261</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Tworzy wideo w katalogu tymczasowym.</string>
+    </property>
+    <property name="text">
+     <string>Utwórz wideo ffmpeg w tmp/tem</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>291</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Otwiera przy użyciu domyślnego programu</string>
+    </property>
+    <property name="text">
+     <string>Otwórz z xdg-open</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSrc">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>10</y>
+      <width>831</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSrc_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="text">
+     <string>Źródło:</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>144</y>
+      <width>850</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnOpen">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>50</y>
+      <width>121</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Otwiera obraz który ma być przekształcony.</string>
+    </property>
+    <property name="text">
+     <string>Wybierz...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="whatsThis">
+     <string>Wartiość parametru promienia we wzorze transformacji.</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="text">
+     <string>Promień</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbR">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>160</y>
+      <width>101</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="minimum">
+     <double>0.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>100000000.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>500.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>160</y>
+      <width>81</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>pix</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>cm</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QSpinBox" name="sbOpenNumber">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>260</y>
+      <width>71</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000000</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnTransform">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>200</y>
+      <width>111</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Rozpoczyna proces</string>
+    </property>
+    <property name="text">
+     <string>Przekształć</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSrcSxiv">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>50</y>
+      <width>131</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Otwórz w sxiv</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbXstart">
+    <property name="geometry">
+     <rect>
+      <x>116</x>
+      <y>120</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="accelerated">
+     <bool>true</bool>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="minimum">
+     <double>-1.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>10.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbYstart">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>120</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="accelerated">
+     <bool>true</bool>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="minimum">
+     <double>-1.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>10.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnXY0">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>120</y>
+      <width>61</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSrcSize">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>90</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>90</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Skok:</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbStep">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>86</y>
+      <width>81</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="minimum">
+     <double>0.001000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>30.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.010000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.300000000000000</double>
+    </property>
+   </widget>
+   <widget class="KPixmapRegionSelectorWidget" name="kpsw">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>81</width>
+      <height>71</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>90</y>
+      <width>141</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wybór z obszaru</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbXend">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>120</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="accelerated">
+     <bool>true</bool>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="minimum">
+     <double>0.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>100000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>10.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbYend">
+    <property name="geometry">
+     <rect>
+      <x>493</x>
+      <y>120</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="accelerated">
+     <bool>true</bool>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="minimum">
+     <double>0.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>100000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>10.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>365</x>
+      <y>124</y>
+      <width>40</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>124</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Y2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>195</x>
+      <y>125</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Y2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>91</x>
+      <y>125</y>
+      <width>40</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X1</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnXY2Max">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>120</y>
+      <width>61</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Maks.</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="prg">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>350</y>
+      <width>361</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sbFfmpegRate">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>200</y>
+      <width>71</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>600</number>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkSun">
+    <property name="geometry">
+     <rect>
+      <x>501</x>
+      <y>160</y>
+      <width>107</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Słońce</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QListView" name="lvSun">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>300</y>
+      <width>256</width>
+      <height>71</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnPreview">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>270</y>
+      <width>211</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wyświetl wstępną grafikę</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbSunHeight">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>190</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Położenie słońca od brzegu</string>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="minimum">
+     <double>0.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>30000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>10.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>50.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsb_r">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>190</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Promień tarczy słońca</string>
+    </property>
+    <property name="maximum">
+     <double>200.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>30.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbRayLen">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>190</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Długość każdego promienia światła wychodzącego ze słońca</string>
+    </property>
+    <property name="maximum">
+     <double>2000.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>600.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>204</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>kl/s</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>170</y>
+      <width>76</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wysokość</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>170</y>
+      <width>61</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>r tarczy</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>170</y>
+      <width>100</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Dł. promieni</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>160</y>
+      <width>20</width>
+      <height>230</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbAnStart">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>240</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="minimum">
+     <double>-3.140000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>3.140000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.010000000000000</double>
+    </property>
+    <property name="value">
+     <double>-1.700000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>220</y>
+      <width>76</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kąt prom.</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbAnEnd">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>240</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="minimum">
+     <double>-3.140000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>3.140000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.010000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>220</y>
+      <width>92</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kąt pr.koń.</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsbSunLoc">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>240</y>
+      <width>75</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Względny kąt położenia słońca na okręgu</string>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="decimals">
+     <number>3</number>
+    </property>
+    <property name="minimum">
+     <double>0.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.010000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>220</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Miejsce 0..1</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>861</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Plik">
+    <property name="title">
+     <string>&amp;Plik</string>
+    </property>
+    <addaction name="actionPrzyk_adowy_z_internetu"/>
+    <addaction name="actionKopiuj_cie_k_wyniku"/>
+    <addaction name="actionZako_cz"/>
+    <addaction name="actionPrzyk_adowy_obraz"/>
+   </widget>
+   <widget class="QMenu" name="menuPo_moc">
+    <property name="title">
+     <string>Po&amp;moc</string>
+    </property>
+    <addaction name="actionCo_to_jest"/>
+   </widget>
+   <addaction name="menu_Plik"/>
+   <addaction name="menuPo_moc"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionZako_cz">
+   <property name="text">
+    <string>Zakończ</string>
+   </property>
+  </action>
+  <action name="actionPrzyk_adowy_z_internetu">
+   <property name="text">
+    <string>Przykładowy z internetu</string>
+   </property>
+  </action>
+  <action name="actionKopiuj_cie_k_wyniku">
+   <property name="text">
+    <string>Kopiuj ścieżkę wyniku</string>
+   </property>
+  </action>
+  <action name="actionCo_to_jest">
+   <property name="text">
+    <string>Co to jest?</string>
+   </property>
+  </action>
+  <action name="actionPrzyk_adowy_obraz">
+   <property name="text">
+    <string>Przykładowy obraz</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KPixmapRegionSelectorWidget</class>
+   <extends>QWidget</extends>
+   <header>kpixmapregionselectorwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
